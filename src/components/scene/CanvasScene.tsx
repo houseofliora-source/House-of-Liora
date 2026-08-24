@@ -64,8 +64,8 @@ const CanvasScene = React.forwardRef<CanvasSceneHandle, CanvasSceneProps>(
 
       context.clearRect(0, 0, viewW, viewH)
 
-      // `cover` maths: scale so the image fully covers the box, then centre it.
-      const ratio = Math.max(viewW / img.naturalWidth, viewH / img.naturalHeight)
+      // `contain` maths: scale so the image fully fits within the box without cropping.
+      const ratio = Math.min(viewW / img.naturalWidth, viewH / img.naturalHeight)
       const drawW = img.naturalWidth * ratio
       const drawH = img.naturalHeight * ratio
       const offsetX = (viewW - drawW) / 2

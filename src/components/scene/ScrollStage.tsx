@@ -181,7 +181,26 @@ export default function ScrollStage({ products }: ScrollStageProps) {
           backgroundColor: '#FAF6F0',
         }}
       >
-        <CanvasScene ref={canvasApiRef} onReady={handleCanvasReady} />
+        {/* A flexible grid wrapper for the canvas and future text */}
+        <div 
+          className="w-full h-full max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_minmax(auto,1200px)_1fr] items-center justify-center relative"
+        >
+          {/* Left Text Area (Future) */}
+          <div className="hidden lg:flex flex-col justify-center items-end text-right px-8 z-10 pointer-events-none">
+             {/* Space for future left-side typography */}
+          </div>
+
+          {/* Core 16:9 Visual Area */}
+          <div className="relative w-full h-full flex items-center justify-center pointer-events-none">
+            {/* The canvas handles 'contain' scaling automatically now */}
+            <CanvasScene ref={canvasApiRef} onReady={handleCanvasReady} />
+          </div>
+
+          {/* Right Text Area (Future) */}
+          <div className="hidden lg:flex flex-col justify-center items-start px-8 z-10 pointer-events-none">
+             {/* Space for future right-side typography */}
+          </div>
+        </div>
 
         {/* Graphical-only scroll cue — no text is stamped over the frames. */}
         <div
