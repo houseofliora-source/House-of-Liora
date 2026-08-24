@@ -9,22 +9,24 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.3.2",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "gsap": "^3.12.7",
-    "next-sanity": "^9.8.17",
+    "@portabletext/react": "^3.2.1",
     "@sanity/client": "^6.28.3",
     "@sanity/image-url": "^1.1.0",
-    "@portabletext/react": "^3.2.1",
-    "sanity": "^3.88.0"
+    "@sanity/vision": "^3.99.0",
+    "gsap": "^3.12.7",
+    "next": "16.3.2",
+    "next-sanity": "^9.8.17",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "sanity": "^3.88.0",
+    "styled-components": "^6.5.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/gsap": "^1.20.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/gsap": "^1.20.2",
     "eslint": "^9",
     "eslint-config-next": "16.3.2",
     "tailwindcss": "^4",
