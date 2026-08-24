@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'house-of-liora-studio',
   title: 'House of Liora Studio',
 
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'your-project-id',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'si3bf6oe',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
 
   plugins: [
