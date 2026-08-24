@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { useCart } from '@/context/CartContext'
-import { urlFor } from '@/sanity/lib/image'
+import { urlFor } from '@/sanity/lib/client'
 import Image from 'next/image'
 import Link from 'next/link'
 import { CheckCircle, Gift, CreditCard, Wallet, Truck, ChevronLeft } from 'lucide-react'
@@ -97,17 +97,17 @@ export default function CheckoutPage() {
                 {cart.map((item) => (
                   <div key={item.product._id} className="flex gap-4 group">
                     <div className="relative w-24 h-24 bg-[#EAE2D6] flex-shrink-0 overflow-hidden">
-                      {item.product.images?.[0] && (
+                      {item.product.mainImage && (
                         <Image
-                          src={urlFor(item.product.images[0]).url()}
-                          alt={item.product.name}
+                          src={urlFor(item.product.mainImage).url()}
+                          alt={item.product.title}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       )}
                     </div>
                     <div className="flex flex-col justify-center flex-grow">
-                      <h3 className="font-serif text-lg text-[#2D251F]">{item.product.name}</h3>
+                      <h3 className="font-serif text-lg text-[#2D251F]">{item.product.title}</h3>
                       <p className="text-sm text-[#9C8D7B] uppercase tracking-wider mt-1">Qty: {item.quantity}</p>
                     </div>
                     <div className="flex flex-col justify-center text-right">
