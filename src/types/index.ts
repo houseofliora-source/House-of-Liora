@@ -37,3 +37,8 @@ export interface PaymentMethod {
   label: string
   icon: string
 }
+
+export interface CartItem {
+  product: Product
+  quantity: number
+}

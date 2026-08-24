@@ -5,12 +5,13 @@ import Image from 'next/image'
 import { Product } from '@/types'
 import { urlFor } from '@/sanity/lib/client'
 
+import Link from 'next/link'
+
 interface ProductCardProps {
   product: Product
-  onClick: (product: Product) => void
 }
 
-export default function ProductCard({ product, onClick }: ProductCardProps) {
+export default function ProductCard({ product }: ProductCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   const mainImageUrl = product.mainImage
@@ -22,12 +23,13 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
     : mainImageUrl
 
   return (
-    <article
+    <Link
+      href={`/product/${product.slug?.current}`}
       className="product-card"
-      onClick={() => onClick(product)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
+        textDecoration: 'none',
         cursor: 'pointer',
         background: '#ffffff',
         borderRadius: '4px',
@@ -40,10 +42,7 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
         display: 'flex',
         flexDirection: 'column',
       }}
-      role="button"
       aria-label={`View ${product.title} — ৳${product.price}`}
-      tabIndex={0}
-      onKeyDown={(e) => e.key === 'Enter' && onClick(product)}
     >
       {/* Image area */}
       <div
@@ -181,6 +180,6 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
           </span>
         </div>
       </div>
-    </article>
+    </Link>
   )
 }

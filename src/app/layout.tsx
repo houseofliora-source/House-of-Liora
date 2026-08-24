@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   },
 }
 
+import { CartProvider } from '@/context/CartContext'
+import CartWidget from '@/components/ui/CartWidget'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,7 +42,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body>{children}</body>
+      <body>
+        <CartProvider>
+          {children}
+          <CartWidget />
+        </CartProvider>
+      </body>
     </html>
   )
 }
