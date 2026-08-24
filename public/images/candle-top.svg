@@ -1,0 +1,89 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="roseBgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#800a18" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FAF6F0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="petalGradOuter" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#C5283D"/>
+      <stop offset="60%" stop-color="#9E1B2C"/>
+      <stop offset="100%" stop-color="#6B0F1A"/>
+    </radialGradient>
+    <radialGradient id="petalGradMid" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#D63046"/>
+      <stop offset="50%" stop-color="#AB1E30"/>
+      <stop offset="100%" stop-color="#73111D"/>
+    </radialGradient>
+    <radialGradient id="petalGradInner" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#E63950"/>
+      <stop offset="50%" stop-color="#BA2236"/>
+      <stop offset="100%" stop-color="#7D1321"/>
+    </radialGradient>
+    <radialGradient id="petalGradCore" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FA4D64"/>
+      <stop offset="70%" stop-color="#8E1423"/>
+      <stop offset="100%" stop-color="#4F0A12"/>
+    </radialGradient>
+    <radialGradient id="wickGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F2E3C6"/>
+      <stop offset="100%" stop-color="#7A6855"/>
+    </radialGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#2D251F" flood-opacity="0.16"/>
+    </filter>
+    <filter id="innerDepth" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#3b060d" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background Glow & Shadow -->
+  <circle cx="300" cy="300" r="280" fill="url(#roseBgGlow)"/>
+  
+  <!-- Outer Petals Layer (Top-Down Sculpted Rose Candle) -->
+  <g filter="url(#softShadow)">
+    <!-- Layer 1: Outermost Petals -->
+    <path d="M300 80 C360 75 440 110 470 165 C495 210 515 290 485 365 C460 430 405 490 330 510 C265 525 185 495 135 445 C85 395 70 310 90 235 C110 160 215 85 300 80Z" fill="url(#petalGradOuter)"/>
+    
+    <!-- Outer Petal Overlaps -->
+    <path d="M220 110 C300 85 390 100 440 155 C395 190 320 195 250 175 C190 160 160 135 220 110Z" fill="url(#petalGradMid)" opacity="0.95"/>
+    <path d="M440 160 C500 220 505 320 460 395 C420 350 395 285 405 220 C410 175 425 155 440 160Z" fill="url(#petalGradMid)" opacity="0.95"/>
+    <path d="M455 380 C420 460 340 500 260 495 C280 435 325 385 390 365 C425 355 450 365 455 380Z" fill="url(#petalGradMid)" opacity="0.95"/>
+    <path d="M260 490 C180 480 115 420 105 340 C155 350 225 330 270 290 C280 355 275 435 260 490Z" fill="url(#petalGradMid)" opacity="0.95"/>
+    <path d="M110 330 C90 245 130 160 205 125 C195 185 225 250 270 280 C205 305 140 325 110 330Z" fill="url(#petalGradMid)" opacity="0.95"/>
+  </g>
+
+  <!-- Layer 2: Mid Petals -->
+  <g filter="url(#innerDepth)">
+    <path d="M300 150 C380 145 435 200 440 270 C445 350 395 420 325 435 C245 450 180 405 160 335 C140 260 205 155 300 150Z" fill="url(#petalGradMid)"/>
+    <path d="M250 170 C330 160 390 190 410 245 C350 265 280 250 230 215 C215 190 230 175 250 170Z" fill="url(#petalGradInner)"/>
+    <path d="M410 245 C435 310 415 375 365 410 C345 350 325 305 350 255 C375 235 400 235 410 245Z" fill="url(#petalGradInner)"/>
+    <path d="M360 405 C295 435 225 410 195 355 C245 335 295 350 335 320 C345 355 355 385 360 405Z" fill="url(#petalGradInner)"/>
+    <path d="M195 350 C175 285 205 220 260 190 C250 245 280 295 315 315 C260 340 215 350 195 350Z" fill="url(#petalGradInner)"/>
+  </g>
+
+  <!-- Layer 3: Inner Blooming Spiral Petals -->
+  <g filter="url(#innerDepth)">
+    <path d="M300 205 C355 200 395 240 395 295 C395 350 355 390 300 390 C245 390 205 350 205 295 C205 240 245 205 300 205Z" fill="url(#petalGradInner)"/>
+    
+    <!-- Rose Vortex / Spiraling Core -->
+    <path d="M265 235 C320 220 365 245 370 290 C320 295 280 280 255 255 C250 245 255 238 265 235Z" fill="url(#petalGradCore)"/>
+    <path d="M365 285 C375 330 345 365 305 370 C300 325 290 295 325 275 C345 268 360 272 365 285Z" fill="url(#petalGradCore)"/>
+    <path d="M305 365 C260 365 230 335 235 295 C275 305 305 295 310 265 C325 310 320 350 305 365Z" fill="url(#petalGradCore)"/>
+    <path d="M235 295 C230 255 260 230 295 235 C280 265 285 290 275 310 C255 310 240 305 235 295Z" fill="url(#petalGradCore)"/>
+  </g>
+
+  <!-- Rose Center / Heart -->
+  <ellipse cx="300" cy="300" rx="35" ry="32" fill="#5E0B16"/>
+  <path d="M285 285 C315 275 325 295 320 315 C305 325 285 320 285 300 C285 290 280 288 285 285Z" fill="#3D060D"/>
+
+  <!-- Candle Wick (Curled Cotton Wick) -->
+  <g filter="url(#innerDepth)">
+    <!-- Wick shadow -->
+    <path d="M298 304 C304 298 312 296 314 288 C316 280 308 276 302 278" stroke="#1F1A17" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <!-- Braided Cotton Wick -->
+    <path d="M296 302 C302 296 310 294 312 286 C314 278 306 274 300 276" stroke="url(#wickGlow)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <!-- Unburnt cotton tip -->
+    <circle cx="300" cy="276" r="3" fill="#FFF8EE"/>
+  </g>
+</svg>
